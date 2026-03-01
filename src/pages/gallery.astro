@@ -1,0 +1,395 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+const galleryImages = [
+	{
+		url: "/compressed_1mb.jpg",
+		title: "Professional Security Guard",
+		category: "Security Personnel"
+	},
+	{
+		url: "/ArmedGard.png",
+		title: "Armed Guard on Duty",
+		category: "Armed Security"
+	},
+	{
+		url: "https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg?auto=compress&cs=tinysrgb&w=800",
+		title: "Surveillance Camera System",
+		category: "Surveillance"
+	},
+	{
+		url: "/PhotoshopExtension_Image_(2).png",
+		title: "Security Team Training",
+		category: "Training"
+	},
+	{
+		url: "/PhotoshopExtension_Image_(11).png",
+		title: "Professional Guard Service",
+		category: "Security Personnel"
+	},
+	{
+		url: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=800",
+		title: "Security Staff on Patrol",
+		category: "Patrol Services"
+	},
+	{
+		url: "/md.png",
+		title: "Security Management",
+		category: "Management"
+	},
+	{
+		url: "/indestrial_sec.png",
+		title: "Industrial Security",
+		category: "Industrial"
+	},
+	{
+		url: "/PhotoshopExtension_Image_(4).png",
+		title: "Security Guard on Post",
+		category: "Security Personnel"
+	},
+	{
+		url: "/sec_op1.png",
+		title: "Security Operations Center",
+		category: "Operations"
+	},
+	{
+		url: "https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=800",
+		title: "CCTV Monitoring",
+		category: "Surveillance"
+	},
+	{
+		url: "/sec_op2.png",
+		title: "Security Control Room",
+		category: "Operations"
+	},
+	{
+		url: "/Sec_corp.png",
+		title: "Building Security",
+		category: "Corporate"
+	},
+	{
+		url: "/Sec_access.png",
+		title: "Access Control",
+		category: "Access Management"
+	},
+	{
+		url: "/Sec_tech.png",
+		title: "Security Technology",
+		category: "Technology"
+	},
+	{
+		url: "/indestrial_sec1.png",
+		title: "Industrial Facility Security",
+		category: "Industrial"
+	}
+];
+
+const categories = ["All", ...new Set(galleryImages.map(img => img.category))];
+---
+
+<Layout title="Gallery - The Tower Security Agency">
+	<Navigation />
+
+	<section class="page-hero">
+		<div class="container">
+			<h1>Our Gallery</h1>
+			<p>Showcasing Our Professional Security Services</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="section-title">
+				<h2>Photo Gallery</h2>
+				<p>A glimpse into our professional security operations</p>
+			</div>
+
+			<div class="filter-buttons">
+				{categories.map(category => (
+					<button class="filter-btn" data-category={category}>
+						{category}
+					</button>
+				))}
+			</div>
+
+			<div class="gallery-grid">
+				{galleryImages.map((image, index) => (
+					<div class="gallery-item" data-category={image.category}>
+						<img src={image.url} alt={image.title} loading="lazy">
+						<div class="gallery-overlay">
+							<h3>{image.title}</h3>
+							<p>{image.category}</p>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="section" style="background: var(--light);">
+		<div class="container">
+			<div class="section-title">
+				<h2>Our Service Areas</h2>
+				<p>Comprehensive security coverage across Tamil Nadu</p>
+			</div>
+			<div class="areas-grid">
+				<div class="area-card card">
+					<div class="area-icon">📍</div>
+					<h3>Chennai</h3>
+					<p>Ambattur, Nungambakkam, Guindy, Alwarpet</p>
+				</div>
+				<div class="area-card card">
+					<div class="area-icon">📍</div>
+					<h3>Thiruvallur District</h3>
+					<p>Ponneri, Gummidipoondi, Kavarapettai</p>
+				</div>
+				<div class="area-card card">
+					<div class="area-icon">📍</div>
+					<h3>Industrial Areas</h3>
+					<p>Mahindra City, Industrial Parks, Manufacturing Units</p>
+				</div>
+				<div class="area-card card">
+					<div class="area-icon">📍</div>
+					<h3>Surrounding Regions</h3>
+					<p>Arani, Nellore, Periyapalayam, Thatchur</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="cta-gallery">
+				<h2>Want to See Our Services in Action?</h2>
+				<p>Contact us today for a site visit and consultation to discuss your security needs.</p>
+				<div class="cta-buttons">
+					<a href="/services" class="btn btn-primary">View Services</a>
+					<a href="/clients" class="btn btn-secondary" style="background: var(--primary); color: var(--white); border: 2px solid var(--primary);">Our Clients</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<Footer />
+</Layout>
+
+<style>
+	.page-hero {
+		background: linear-gradient(135deg, var(--primary), var(--accent));
+		color: var(--white);
+		padding: 120px 0 80px;
+		text-align: center;
+	}
+
+	.page-hero h1 {
+		font-size: 3.5rem;
+		margin-bottom: 20px;
+	}
+
+	.page-hero p {
+		font-size: 1.3rem;
+		opacity: 0.9;
+	}
+
+	.filter-buttons {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 15px;
+		margin-bottom: 50px;
+	}
+
+	.filter-btn {
+		padding: 12px 28px;
+		border: 2px solid var(--primary);
+		background: var(--white);
+		color: var(--primary);
+		border-radius: 5px;
+		font-weight: 600;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		font-size: 0.95rem;
+	}
+
+	.filter-btn:hover,
+	.filter-btn.active {
+		background: var(--primary);
+		color: var(--white);
+	}
+
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 30px;
+	}
+
+	.gallery-item {
+		position: relative;
+		overflow: hidden;
+		border-radius: 10px;
+		cursor: pointer;
+		aspect-ratio: 4/3;
+		transition: all 0.3s ease;
+	}
+
+	.gallery-item.hidden {
+		display: none;
+	}
+
+	.gallery-item img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.5s ease;
+	}
+
+	.gallery-item:hover img {
+		transform: scale(1.15);
+	}
+
+	.gallery-overlay {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+		color: var(--white);
+		padding: 30px 20px 20px;
+		transform: translateY(100%);
+		transition: transform 0.3s ease;
+	}
+
+	.gallery-item:hover .gallery-overlay {
+		transform: translateY(0);
+	}
+
+	.gallery-overlay h3 {
+		font-size: 1.2rem;
+		margin-bottom: 8px;
+	}
+
+	.gallery-overlay p {
+		color: var(--gold);
+		font-size: 0.9rem;
+		font-weight: 600;
+	}
+
+	.areas-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 30px;
+	}
+
+	.area-card {
+		text-align: center;
+		padding: 40px 30px;
+	}
+
+	.area-icon {
+		font-size: 3rem;
+		margin-bottom: 20px;
+	}
+
+	.area-card h3 {
+		color: var(--primary);
+		font-size: 1.4rem;
+		margin-bottom: 15px;
+	}
+
+	.area-card p {
+		color: var(--text-light);
+		line-height: 1.7;
+	}
+
+	.cta-gallery {
+		text-align: center;
+		max-width: 700px;
+		margin: 0 auto;
+	}
+
+	.cta-gallery h2 {
+		color: var(--primary);
+		font-size: 2.5rem;
+		margin-bottom: 20px;
+	}
+
+	.cta-gallery p {
+		color: var(--text-light);
+		font-size: 1.2rem;
+		margin-bottom: 35px;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 20px;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	@media (max-width: 768px) {
+		.page-hero {
+			padding: 100px 0 60px;
+		}
+
+		.page-hero h1 {
+			font-size: 2.2rem;
+		}
+
+		.page-hero p {
+			font-size: 1.1rem;
+		}
+
+		.gallery-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.filter-buttons {
+			gap: 10px;
+		}
+
+		.filter-btn {
+			padding: 10px 20px;
+			font-size: 0.9rem;
+		}
+
+		.cta-gallery h2 {
+			font-size: 1.8rem;
+		}
+
+		.cta-buttons {
+			flex-direction: column;
+		}
+
+		.cta-buttons .btn {
+			width: 100%;
+		}
+	}
+</style>
+
+<script>
+	const filterButtons = document.querySelectorAll('.filter-btn');
+	const galleryItems = document.querySelectorAll('.gallery-item');
+
+	filterButtons.forEach(button => {
+		button.addEventListener('click', () => {
+			const category = button.getAttribute('data-category');
+
+			filterButtons.forEach(btn => btn.classList.remove('active'));
+			button.classList.add('active');
+
+			galleryItems.forEach(item => {
+				if (category === 'All' || item.getAttribute('data-category') === category) {
+					item.classList.remove('hidden');
+				} else {
+					item.classList.add('hidden');
+				}
+			});
+		});
+	});
+
+	if (filterButtons.length > 0) {
+		filterButtons[0].classList.add('active');
+	}
+</script>

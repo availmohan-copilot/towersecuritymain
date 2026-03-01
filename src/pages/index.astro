@@ -1,0 +1,504 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import QuickContact from '../components/QuickContact.astro';
+---
+
+<Layout title="The Tower Security Agency - Professional Ex-Servicemen Security Firm">
+	<Navigation />
+
+	<section class="hero">
+		<div class="video-container">
+			<video
+				autoplay
+				muted
+				loop
+				playsinline
+				id="heroVideo"
+				preload="auto"
+				poster="/compressed_1mb.jpg"
+			>
+				<source src="https://videos.pexels.com/video-files/6774396/6774396-hd_1920_1080_25fps.mp4" type="video/mp4">
+				<source src="https://videos.pexels.com/video-files/6774396/6774396-hd_1280_720_25fps.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+			<div class="video-overlay"></div>
+		</div>
+		<div class="hero-content">
+			<div class="container">
+				<h1 class="hero-title">The Tower Security Agency</h1>
+				<p class="hero-subtitle">AN EX-SERVICEMEN FIRM</p>
+				<p class="hero-text">Professional Security Services with Military Precision and Dedication</p>
+				<div class="hero-buttons">
+					<a href="/services" class="btn btn-primary">Our Services</a>
+					<a href="#contact" class="btn btn-secondary">Contact Us</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="intro section">
+		<div class="container">
+			<div class="section-title">
+				<h2>Welcome to The Tower Security Agency</h2>
+				<p>Your trusted partner in comprehensive security solutions</p>
+			</div>
+			<div class="intro-content">
+				<p>We are one of the leading security organizations with determination to cater to the Security, Safety, Preventive Services and Surveillance needs of your organizations. Our Security force consists of well trained and experienced personnel recruited from Ex-Servicemen, Paramilitary services companies of well repute and trained civilians or reasonably qualified with relevant experience in the field.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="features section" style="background: var(--light);">
+		<div class="container">
+			<div class="section-title">
+				<h2>Why Choose Us</h2>
+				<p>Excellence in security through experience and dedication</p>
+			</div>
+			<div class="features-grid">
+				<div class="feature-card card">
+					<div class="feature-icon">🛡️</div>
+					<h3>Ex-Servicemen Team</h3>
+					<p>Our security force consists of highly trained ex-servicemen and paramilitary personnel with proven track records.</p>
+				</div>
+				<div class="feature-card card">
+					<div class="feature-icon">👁️</div>
+					<h3>24/7 Surveillance</h3>
+					<p>Advanced surveillance cameras and round-the-clock monitoring to ensure 100% safety of your premises.</p>
+				</div>
+				<div class="feature-card card">
+					<div class="feature-icon">⚡</div>
+					<h3>Rapid Response</h3>
+					<p>Quick response teams equipped with modern communication tools for immediate action.</p>
+				</div>
+				<div class="feature-card card">
+					<div class="feature-icon">💼</div>
+					<h3>Professional Training</h3>
+					<p>Comprehensive training in security, first aid, firefighting, crisis management, and public relations.</p>
+				</div>
+				<div class="feature-card card">
+					<div class="feature-icon">🔒</div>
+					<h3>Total Security Solutions</h3>
+					<p>From armed guards to VIP escorts, we provide complete security coverage tailored to your needs.</p>
+				</div>
+				<div class="feature-card card">
+					<div class="feature-icon">✓</div>
+					<h3>Licensed & Certified</h3>
+					<p>Fully licensed under PSAR Act 2005 with all necessary registrations and certifications.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="services-preview section">
+		<div class="container">
+			<div class="section-title">
+				<h2>Our Core Services</h2>
+				<p>Comprehensive security solutions for every need</p>
+			</div>
+			<div class="services-grid">
+				<div class="service-card">
+					<div class="service-image">
+						<img src="/PhotoshopExtension_Image_(6).png" alt="Security Guards">
+					</div>
+					<div class="service-content">
+						<h3>Security Guards & Officers</h3>
+						<p>Professionally trained security personnel for comprehensive protection of your premises.</p>
+						<a href="/services" class="service-link">Learn More →</a>
+					</div>
+				</div>
+				<div class="service-card">
+					<div class="service-image">
+						<img src="/ArmedGard.png" alt="Armed Guards">
+					</div>
+					<div class="service-content">
+						<h3>Armed Guards</h3>
+						<p>Trained armed personnel providing enhanced security for high-value assets and critical locations.</p>
+						<a href="/services" class="service-link">Learn More →</a>
+					</div>
+				</div>
+				<div class="service-card">
+					<div class="service-image">
+						<img src="https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Surveillance">
+					</div>
+					<div class="service-content">
+						<h3>Surveillance Systems</h3>
+						<p>Advanced camera systems with 24/7 monitoring for complete premises security.</p>
+						<a href="/services" class="service-link">Learn More →</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="stats section" style="background: var(--primary); color: var(--white);">
+		<div class="container">
+			<div class="stats-grid">
+				<div class="stat-item">
+					<div class="stat-number">40+</div>
+					<div class="stat-label">Satisfied Clients</div>
+				</div>
+				<div class="stat-item">
+					<div class="stat-number">15+</div>
+					<div class="stat-label">Years Experience</div>
+				</div>
+				<div class="stat-item">
+					<div class="stat-number">500+</div>
+					<div class="stat-label">Security Personnel</div>
+				</div>
+				<div class="stat-item">
+					<div class="stat-number">24/7</div>
+					<div class="stat-label">Support Available</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="cta section" style="background: var(--accent); color: var(--white);">
+		<div class="container">
+			<div class="cta-content">
+				<h2>Ready to Secure Your Premises?</h2>
+				<p>Contact us today for a free consultation and custom security solution.</p>
+				<div class="cta-buttons">
+					<a href="/services" class="btn btn-primary">View Services</a>
+					<a href="tel:+919380335457" class="btn btn-secondary">Call Now</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div id="contact">
+		<QuickContact />
+	</div>
+
+	<Footer />
+</Layout>
+
+<style>
+	.hero {
+		position: relative;
+		height: 100vh;
+		min-height: 600px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+	}
+
+	.video-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	.video-container video {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		transform: translate(-50%, -50%);
+		object-fit: cover;
+		z-index: 0;
+	}
+
+	.video-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(135deg, rgba(26, 26, 46, 0.85), rgba(15, 52, 96, 0.75));
+		z-index: 1;
+	}
+
+	.hero-content {
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		color: var(--white);
+		padding: 0 20px;
+	}
+
+	.hero-title {
+		font-size: 4rem;
+		font-weight: 800;
+		margin-bottom: 15px;
+		text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+		animation: fadeInUp 1s ease;
+	}
+
+	.hero-subtitle {
+		font-size: 1.3rem;
+		color: var(--gold);
+		font-weight: 700;
+		letter-spacing: 4px;
+		margin-bottom: 25px;
+		animation: fadeInUp 1s ease 0.2s both;
+	}
+
+	.hero-text {
+		font-size: 1.5rem;
+		margin-bottom: 40px;
+		max-width: 700px;
+		margin-left: auto;
+		margin-right: auto;
+		line-height: 1.6;
+		animation: fadeInUp 1s ease 0.4s both;
+	}
+
+	.hero-buttons {
+		display: flex;
+		gap: 20px;
+		justify-content: center;
+		flex-wrap: wrap;
+		animation: fadeInUp 1s ease 0.6s both;
+	}
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.intro-content {
+		max-width: 900px;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 1.15rem;
+		color: var(--text-light);
+		line-height: 1.9;
+	}
+
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 30px;
+	}
+
+	.feature-card {
+		text-align: center;
+	}
+
+	.feature-icon {
+		font-size: 4rem;
+		margin-bottom: 20px;
+	}
+
+	.feature-card h3 {
+		color: var(--primary);
+		font-size: 1.4rem;
+		margin-bottom: 15px;
+	}
+
+	.feature-card p {
+		color: var(--text-light);
+		line-height: 1.7;
+	}
+
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		gap: 30px;
+	}
+
+	.service-card {
+		background: var(--white);
+		border-radius: 10px;
+		overflow: hidden;
+		box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+		transition: all 0.3s ease;
+	}
+
+	.service-card:hover {
+		transform: translateY(-10px);
+		box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+	}
+
+	.service-image {
+		height: 250px;
+		overflow: hidden;
+	}
+
+	.service-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.5s ease;
+	}
+
+	.service-card:hover .service-image img {
+		transform: scale(1.1);
+	}
+
+	.service-content {
+		padding: 30px;
+	}
+
+	.service-content h3 {
+		color: var(--primary);
+		font-size: 1.4rem;
+		margin-bottom: 15px;
+	}
+
+	.service-content p {
+		color: var(--text-light);
+		margin-bottom: 20px;
+		line-height: 1.7;
+	}
+
+	.service-link {
+		color: var(--gold);
+		font-weight: 600;
+		transition: all 0.3s ease;
+	}
+
+	.service-link:hover {
+		padding-left: 10px;
+	}
+
+	.stats-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 40px;
+		text-align: center;
+	}
+
+	.stat-number {
+		font-size: 3.5rem;
+		font-weight: 800;
+		color: var(--gold);
+		margin-bottom: 10px;
+	}
+
+	.stat-label {
+		font-size: 1.2rem;
+		font-weight: 500;
+		opacity: 0.9;
+	}
+
+	.cta-content {
+		text-align: center;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.cta-content h2 {
+		font-size: 2.5rem;
+		margin-bottom: 20px;
+	}
+
+	.cta-content p {
+		font-size: 1.2rem;
+		margin-bottom: 40px;
+		opacity: 0.9;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 20px;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			height: 80vh;
+		}
+
+		.hero-title {
+			font-size: 2.2rem;
+		}
+
+		.hero-subtitle {
+			font-size: 1rem;
+			letter-spacing: 2px;
+		}
+
+		.hero-text {
+			font-size: 1.1rem;
+		}
+
+		.features-grid,
+		.services-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.stats-grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 30px;
+		}
+
+		.stat-number {
+			font-size: 2.5rem;
+		}
+
+		.cta-content h2 {
+			font-size: 1.8rem;
+		}
+	}
+</style>
+
+<script is:inline>
+	(function() {
+		function initVideo() {
+			var video = document.getElementById('heroVideo');
+			if (!video) return;
+
+			video.muted = true;
+			video.defaultMuted = true;
+			video.setAttribute('muted', '');
+			video.volume = 0;
+
+			function attemptPlay() {
+				if (video.paused) {
+					var playPromise = video.play();
+
+					if (playPromise !== undefined) {
+						playPromise.then(function() {
+							console.log('Video playback started');
+						}).catch(function(error) {
+							console.log('Autoplay prevented:', error);
+							setTimeout(attemptPlay, 500);
+						});
+					}
+				}
+			}
+
+			video.addEventListener('loadedmetadata', function() {
+				attemptPlay();
+			});
+
+			video.addEventListener('canplay', function() {
+				attemptPlay();
+			});
+
+			if (video.readyState >= 2) {
+				attemptPlay();
+			}
+
+			video.load();
+		}
+
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', initVideo);
+		} else {
+			initVideo();
+		}
+
+		window.addEventListener('load', function() {
+			setTimeout(initVideo, 100);
+		});
+	})();
+</script>

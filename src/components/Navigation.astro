@@ -1,0 +1,239 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="navbar">
+	<div class="container">
+		<div class="nav-content">
+			<a href="/" class="logo">
+				<img src="/TowerSecuritynew.png" alt="The Tower Security Agency" class="logo-image">
+				<div class="logo-text">
+					<span class="logo-main">The Tower Security Agency</span>
+					<span class="logo-sub">AN EX-SERVICEMEN FIRM</span>
+				</div>
+			</a>
+
+			<button class="mobile-toggle" aria-label="Toggle menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+
+			<ul class="nav-links">
+				<li><a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a></li>
+				<li><a href="/about" class={currentPath === '/about' ? 'active' : ''}>About Us</a></li>
+				<li><a href="/services" class={currentPath === '/services' ? 'active' : ''}>Services</a></li>
+				<li><a href="/team" class={currentPath === '/team' ? 'active' : ''}>Our Team</a></li>
+				<li><a href="/clients" class={currentPath === '/clients' ? 'active' : ''}>Our Clients</a></li>
+				<li><a href="/licenses" class={currentPath === '/licenses' ? 'active' : ''}>Licenses</a></li>
+				<li><a href="/gallery" class={currentPath === '/gallery' ? 'active' : ''}>Gallery</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<style>
+	.navbar {
+		background: var(--primary);
+		position: sticky;
+		top: 0;
+		z-index: 1000;
+		box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+	}
+
+	.nav-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem 0;
+	}
+
+	.logo {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		transition: opacity 0.3s ease;
+	}
+
+	.logo:hover {
+		opacity: 0.9;
+	}
+
+	.logo-image {
+		height: 50px;
+		width: auto;
+		filter: brightness(0) invert(1);
+	}
+
+	.logo-text {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.logo-main {
+		color: var(--white);
+		font-size: 1.5rem;
+		font-weight: 700;
+		letter-spacing: 0.5px;
+	}
+
+	.logo-sub {
+		color: var(--gold);
+		font-size: 0.75rem;
+		font-weight: 600;
+		letter-spacing: 2px;
+		margin-top: -4px;
+	}
+
+	.mobile-toggle {
+		display: none;
+		flex-direction: column;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0;
+		z-index: 1001;
+	}
+
+	.mobile-toggle span {
+		width: 25px;
+		height: 3px;
+		background: var(--white);
+		margin: 3px 0;
+		transition: all 0.3s ease;
+		border-radius: 3px;
+	}
+
+	.nav-links {
+		display: flex;
+		list-style: none;
+		gap: 2rem;
+		align-items: center;
+	}
+
+	.nav-links a {
+		color: var(--white);
+		font-weight: 500;
+		font-size: 0.95rem;
+		padding: 8px 0;
+		position: relative;
+		transition: color 0.3s ease;
+	}
+
+	.nav-links a::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 2px;
+		background: var(--gold);
+		transition: width 0.3s ease;
+	}
+
+	.nav-links a:hover,
+	.nav-links a.active {
+		color: var(--gold);
+	}
+
+	.nav-links a:hover::after,
+	.nav-links a.active::after {
+		width: 100%;
+	}
+
+	@media (max-width: 1024px) {
+		.logo-main {
+			font-size: 1.2rem;
+		}
+
+		.logo-image {
+			height: 40px;
+		}
+
+		.nav-links {
+			gap: 1.5rem;
+		}
+
+		.nav-links a {
+			font-size: 0.9rem;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.logo-image {
+			height: 35px;
+		}
+
+		.logo-main {
+			font-size: 1rem;
+		}
+
+		.logo-sub {
+			font-size: 0.65rem;
+		}
+
+		.mobile-toggle {
+			display: flex;
+		}
+
+		.nav-links {
+			position: fixed;
+			top: 0;
+			right: -100%;
+			width: 70%;
+			max-width: 300px;
+			height: 100vh;
+			background: var(--secondary);
+			flex-direction: column;
+			padding: 100px 30px 30px;
+			gap: 0;
+			align-items: flex-start;
+			transition: right 0.3s ease;
+			box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+		}
+
+		.nav-links.active {
+			right: 0;
+		}
+
+		.nav-links li {
+			width: 100%;
+			border-bottom: 1px solid rgba(255,255,255,0.1);
+		}
+
+		.nav-links a {
+			display: block;
+			padding: 15px 0;
+			font-size: 1rem;
+		}
+
+		.mobile-toggle.active span:nth-child(1) {
+			transform: rotate(45deg) translate(8px, 8px);
+		}
+
+		.mobile-toggle.active span:nth-child(2) {
+			opacity: 0;
+		}
+
+		.mobile-toggle.active span:nth-child(3) {
+			transform: rotate(-45deg) translate(8px, -8px);
+		}
+	}
+</style>
+
+<script>
+	const mobileToggle = document.querySelector('.mobile-toggle');
+	const navLinks = document.querySelector('.nav-links');
+
+	mobileToggle?.addEventListener('click', () => {
+		mobileToggle.classList.toggle('active');
+		navLinks?.classList.toggle('active');
+	});
+
+	document.querySelectorAll('.nav-links a').forEach(link => {
+		link.addEventListener('click', () => {
+			mobileToggle?.classList.remove('active');
+			navLinks?.classList.remove('active');
+		});
+	});
+</script>

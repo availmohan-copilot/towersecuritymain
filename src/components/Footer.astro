@@ -1,0 +1,190 @@
+---
+---
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer-content">
+			<div class="footer-section">
+				<div class="footer-logo">
+					<img src="/TowerSecuritynew.png" alt="The Tower Security Agency">
+					<div>
+						<h3>The Tower Security Agency</h3>
+						<p class="tagline">AN EX-SERVICEMEN FIRM</p>
+					</div>
+				</div>
+				<p>Professional security services with dedication and discipline. Protecting what matters most to you.</p>
+			</div>
+
+			<div class="footer-section">
+				<h4>Quick Links</h4>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/about">About Us</a></li>
+					<li><a href="/services">Services</a></li>
+					<li><a href="/team">Our Team</a></li>
+					<li><a href="/clients">Our Clients</a></li>
+					<li><a href="/licenses">Licenses</a></li>
+					<li><a href="/gallery">Gallery</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-section">
+				<h4>Our Services</h4>
+				<ul>
+					<li>Security Guards</li>
+					<li>Armed Guards</li>
+					<li>VIP Escorts</li>
+					<li>Surveillance Systems</li>
+					<li>Bouncers</li>
+					<li>Manpower Services</li>
+				</ul>
+			</div>
+
+			<div class="footer-section">
+				<h4>Contact Us</h4>
+				<ul class="contact-info">
+					<li>
+						<strong>Address:</strong><br>
+						#23, Varadappa Naicker Street,<br>
+						1st Floor, Ponneri,<br>
+						Thiruvallur, Tamil Nadu - 601 204
+					</li>
+					<li>
+						<strong>Phone:</strong><br>
+						044 - 2797 1151<br>
+						+91 93803 35457<br>
+						+91 90808 62525
+					</li>
+					<li>
+						<strong>Email:</strong><br>
+						thetowersecurity@gmail.com
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<p>&copy; {new Date().getFullYear()} The Tower Security Agency. All rights reserved.</p>
+			<p>Designed for excellence in security services</p>
+		</div>
+	</div>
+</footer>
+
+<style>
+	.footer {
+		background: var(--primary);
+		color: var(--white);
+		padding: 60px 0 20px;
+		margin-top: 80px;
+	}
+
+	.footer-content {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 40px;
+		margin-bottom: 40px;
+	}
+
+	.footer-logo {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		margin-bottom: 20px;
+	}
+
+	.footer-logo img {
+		height: 60px;
+		width: auto;
+		filter: brightness(0) invert(1);
+	}
+
+	.footer-section h3 {
+		color: var(--gold);
+		font-size: 1.5rem;
+		margin-bottom: 5px;
+	}
+
+	.footer-section h4 {
+		color: var(--gold);
+		font-size: 1.2rem;
+		margin-bottom: 20px;
+	}
+
+	.tagline {
+		color: var(--gold);
+		font-size: 0.85rem;
+		font-weight: 600;
+		letter-spacing: 1.5px;
+		margin-bottom: 15px;
+	}
+
+	.footer-section p {
+		color: rgba(255,255,255,0.8);
+		line-height: 1.8;
+	}
+
+	.footer-section ul {
+		list-style: none;
+	}
+
+	.footer-section ul li {
+		margin-bottom: 10px;
+		color: rgba(255,255,255,0.8);
+		line-height: 1.8;
+	}
+
+	.footer-section ul li a {
+		color: rgba(255,255,255,0.8);
+		transition: all 0.3s ease;
+	}
+
+	.footer-section ul li a:hover {
+		color: var(--gold);
+		padding-left: 5px;
+	}
+
+	.contact-info li {
+		margin-bottom: 20px;
+	}
+
+	.contact-info strong {
+		color: var(--gold);
+		display: block;
+		margin-bottom: 8px;
+	}
+
+	.footer-bottom {
+		border-top: 1px solid rgba(255,255,255,0.1);
+		padding-top: 30px;
+		text-align: center;
+	}
+
+	.footer-bottom p {
+		color: rgba(255,255,255,0.6);
+		margin-bottom: 5px;
+	}
+
+	@media (max-width: 768px) {
+		.footer {
+			padding: 40px 0 20px;
+		}
+
+		.footer-content {
+			grid-template-columns: 1fr;
+			gap: 30px;
+		}
+
+		.footer-logo {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.footer-logo img {
+			height: 50px;
+		}
+
+		.footer-section h3 {
+			font-size: 1.3rem;
+		}
+	}
+</style>

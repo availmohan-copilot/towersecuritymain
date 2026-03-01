@@ -1,0 +1,192 @@
+---
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = 'The Tower Security Agency - Ex-Servicemen Security Firm',
+	description = 'Professional security services by ex-servicemen. Providing security guards, surveillance, VIP escorts, and comprehensive security solutions across South India.'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--primary: #1a1a2e;
+		--secondary: #16213e;
+		--accent: #0f3460;
+		--gold: #d4af37;
+		--light: #f1f1f1;
+		--white: #ffffff;
+		--text-dark: #2d3436;
+		--text-light: #636e72;
+		--success: #00b894;
+		--danger: #d63031;
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+		color: var(--text-dark);
+		line-height: 1.6;
+		overflow-x: hidden;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 700;
+		line-height: 1.2;
+		margin-bottom: 1rem;
+	}
+
+	h1 { font-size: 3rem; }
+	h2 { font-size: 2.5rem; }
+	h3 { font-size: 2rem; }
+	h4 { font-size: 1.5rem; }
+
+	p {
+		margin-bottom: 1rem;
+		line-height: 1.8;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+		transition: all 0.3s ease;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+
+	.section {
+		padding: 80px 0;
+	}
+
+	.section-title {
+		text-align: center;
+		margin-bottom: 60px;
+	}
+
+	.section-title h2 {
+		font-size: 2.5rem;
+		color: var(--primary);
+		margin-bottom: 1rem;
+		position: relative;
+		display: inline-block;
+	}
+
+	.section-title h2::after {
+		content: '';
+		position: absolute;
+		bottom: -10px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 80px;
+		height: 4px;
+		background: var(--gold);
+	}
+
+	.section-title p {
+		color: var(--text-light);
+		font-size: 1.1rem;
+		max-width: 600px;
+		margin: 20px auto 0;
+	}
+
+	.btn {
+		display: inline-block;
+		padding: 14px 32px;
+		border-radius: 5px;
+		font-weight: 600;
+		text-align: center;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		border: none;
+		font-size: 1rem;
+	}
+
+	.btn-primary {
+		background: var(--gold);
+		color: var(--primary);
+	}
+
+	.btn-primary:hover {
+		background: #c49d2e;
+		transform: translateY(-2px);
+		box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+	}
+
+	.btn-secondary {
+		background: transparent;
+		color: var(--white);
+		border: 2px solid var(--white);
+	}
+
+	.btn-secondary:hover {
+		background: var(--white);
+		color: var(--primary);
+	}
+
+	.card {
+		background: var(--white);
+		border-radius: 10px;
+		padding: 30px;
+		box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+		transition: all 0.3s ease;
+		height: 100%;
+	}
+
+	.card:hover {
+		transform: translateY(-10px);
+		box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+	}
+
+	@media (max-width: 768px) {
+		h1 { font-size: 2rem; }
+		h2 { font-size: 1.8rem; }
+		h3 { font-size: 1.5rem; }
+
+		.section {
+			padding: 60px 0;
+		}
+
+		.section-title h2 {
+			font-size: 2rem;
+		}
+	}
+</style>

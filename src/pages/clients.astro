@@ -1,0 +1,489 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import QuickContact from '../components/QuickContact.astro';
+
+const clients = [
+	"Sree Sumangala Metals & Industries (P) Ltd., Ambattur",
+	"Chennai Plastic Products Private Limited, Ambattur",
+	"Southern Scribe Instruments Pvt. Ltd, Ambattur",
+	"Sree Sumangala Metals & Industries (P) Ltd., Tondaiyarpet",
+	"RBA Exports (P) Ltd., Alwarpet, Chennai",
+	"Tamilnadu Coke & Power Ltd, Nellore",
+	"Orient Frozen Foods LLP, Elavur",
+	"SGR 777 Foods Pvt. Ltd., Gummidipoondi",
+	"RBA Exports (P) Ltd., Gummidipoondi",
+	"ARS Steels - Gummidipoondi",
+	"PowerMax Rubber Factory, Gummidipoondi",
+	"Sri Sham Enterprises, Gummidipoondi",
+	"Jai Maruthi Polymers, Gummidipoondi",
+	"Tamilnadu Coke & Power Ltd, Kavarapettai",
+	"Indospace As Industrial Park (P) Ltd., Durainallur, Puduvoyal",
+	"Nexteel Industries, Arani",
+	"Jumbo Bag Factory, Thatchur",
+	"PowerMax Pvt. Ltd, Irulipattu",
+	"Emcarb Alloy, Madavaram, Ponneri",
+	"Varsha Technology, Mahindra City, Ponneri",
+	"BAK Shop, Ponneri",
+	"Rubino Industries Private Limited, Thatchur, Ponneri",
+	"SAM's Marine Engg College - Panapakkam, Peiyapalayam",
+	"NEO Heights Builders And Promoters Pvt Ltd, Thiruvallur",
+	"Chennai Pen Products, Harington Road, Nungambakkam",
+	"D Pack - Ambattur Industrial Estate",
+	"JIVITA Lifesciences LLP, Arani, Periyapalayam",
+	"GVN Homes, Ponneri",
+	"Vijayalakshmi Textiles, Ponneri",
+	"Stock Area, Puzhalan dVengal",
+	"Prime Expat Infra Privated Ltd (Arete Homes, Appartments, Ponneri)",
+	"Parekh Integrated Services Pvt Ltd",
+	"Aqua Terra Coke and Energy Ltd",
+	"RR Towers, Guindy",
+	"Time Technoplast Ltd",
+	"ABT Maruti, Ponneri",
+	"Malathi Engineering unit I & II",
+	"White City (Nattham)",
+	"Vishnu Priya Paper Mills Pvt Ltd (Irulipattu)",
+	"Taiyo Feed Mill Limited (Thanakulam)",
+	"SPECX (Madavaram)"
+];
+---
+
+<Layout title="Our Clients - The Tower Security Agency">
+	<Navigation />
+
+	<section class="page-hero">
+		<div class="container">
+			<h1>Our Clients</h1>
+			<p>Trusted by Leading Organizations Across South India</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="section-title">
+				<h2>Our Valued Clients</h2>
+				<p>Building long-term partnerships through exceptional service</p>
+			</div>
+			<div class="clients-intro">
+				<p>We are proud to serve over 40+ distinguished clients across various industries including manufacturing, IT, real estate, education, food processing, and more. Our commitment to excellence and personalized security solutions has earned us the trust of leading organizations throughout South India.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section" style="background: var(--light);">
+		<div class="container">
+			<div class="section-title">
+				<h2>Featured Clients</h2>
+			</div>
+			<div class="carousel-container">
+				<button class="carousel-btn prev" aria-label="Previous">‹</button>
+				<div class="carousel">
+					<div class="carousel-track">
+						{clients.slice(0, 12).map(client => (
+							<div class="carousel-card">
+								<div class="client-icon">🏢</div>
+								<h3>{client}</h3>
+							</div>
+						))}
+					</div>
+				</div>
+				<button class="carousel-btn next" aria-label="Next">›</button>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="section-title">
+				<h2>Complete Client List</h2>
+				<p>Organizations we're proud to protect</p>
+			</div>
+			<div class="clients-grid">
+				{clients.map((client, index) => (
+					<div class="client-card card">
+						<div class="client-number">{String(index + 1).padStart(2, '0')}</div>
+						<h4>{client}</h4>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="section" style="background: var(--primary); color: var(--white);">
+		<div class="container">
+			<div class="section-title">
+				<h2 style="color: var(--white);">Industries We Serve</h2>
+				<p style="color: rgba(255,255,255,0.8);">Specialized security solutions for diverse sectors</p>
+			</div>
+			<div class="industries-grid">
+				<div class="industry-card">
+					<div class="industry-icon">🏭</div>
+					<h3>Manufacturing</h3>
+					<p>Industrial parks, factories, and production facilities</p>
+				</div>
+				<div class="industry-card">
+					<div class="industry-icon">💼</div>
+					<h3>Corporate</h3>
+					<p>IT companies, offices, and business establishments</p>
+				</div>
+				<div class="industry-card">
+					<div class="industry-icon">🏗️</div>
+					<h3>Real Estate</h3>
+					<p>Residential complexes, apartments, and construction sites</p>
+				</div>
+				<div class="industry-card">
+					<div class="industry-icon">🎓</div>
+					<h3>Education</h3>
+					<p>Colleges, educational institutions, and campuses</p>
+				</div>
+				<div class="industry-card">
+					<div class="industry-icon">🍽️</div>
+					<h3>Food Processing</h3>
+					<p>Food manufacturing and processing units</p>
+				</div>
+				<div class="industry-card">
+					<div class="industry-icon">📦</div>
+					<h3>Logistics</h3>
+					<p>Warehouses, stock areas, and distribution centers</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="testimonial-section">
+				<div class="section-title">
+					<h2>Client Testimonials</h2>
+					<p>What our clients say about us</p>
+				</div>
+				<div class="testimonials-grid">
+					<div class="testimonial-card card">
+						<div class="quote-icon">"</div>
+						<p>The Tower Security Agency has been instrumental in ensuring the safety of our manufacturing facility. Their ex-servicemen personnel bring unmatched discipline and professionalism.</p>
+						<div class="testimonial-author">
+							<strong>Manufacturing Client</strong>
+							<span>Chennai</span>
+						</div>
+					</div>
+					<div class="testimonial-card card">
+						<div class="quote-icon">"</div>
+						<p>We have been working with The Tower Security Agency for several years. Their 24/7 surveillance systems and dedicated guards have given us complete peace of mind.</p>
+						<div class="testimonial-author">
+							<strong>IT Company</strong>
+							<span>Mahindra City</span>
+						</div>
+					</div>
+					<div class="testimonial-card card">
+						<div class="quote-icon">"</div>
+						<p>Excellent service and reliable security personnel. The management team is very responsive and their supervisors ensure quality is maintained at all times.</p>
+						<div class="testimonial-author">
+							<strong>Real Estate Developer</strong>
+							<span>Ponneri</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<QuickContact />
+	<Footer />
+</Layout>
+
+<style>
+	.page-hero {
+		background: linear-gradient(135deg, var(--primary), var(--accent));
+		color: var(--white);
+		padding: 120px 0 80px;
+		text-align: center;
+	}
+
+	.page-hero h1 {
+		font-size: 3.5rem;
+		margin-bottom: 20px;
+	}
+
+	.page-hero p {
+		font-size: 1.3rem;
+		opacity: 0.9;
+	}
+
+	.clients-intro {
+		max-width: 900px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.clients-intro p {
+		font-size: 1.15rem;
+		color: var(--text-light);
+		line-height: 1.9;
+	}
+
+	.carousel-container {
+		position: relative;
+		max-width: 100%;
+		overflow: hidden;
+	}
+
+	.carousel {
+		overflow: hidden;
+		padding: 20px 0;
+	}
+
+	.carousel-track {
+		display: flex;
+		gap: 30px;
+		transition: transform 0.5s ease;
+	}
+
+	.carousel-card {
+		flex: 0 0 calc(33.333% - 20px);
+		background: var(--white);
+		padding: 40px 30px;
+		border-radius: 10px;
+		box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+		text-align: center;
+		min-height: 200px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.client-icon {
+		font-size: 3rem;
+		margin-bottom: 20px;
+	}
+
+	.carousel-card h3 {
+		color: var(--primary);
+		font-size: 1.1rem;
+		line-height: 1.5;
+	}
+
+	.carousel-btn {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: var(--gold);
+		color: var(--primary);
+		border: none;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		font-size: 2rem;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		z-index: 10;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+	}
+
+	.carousel-btn:hover {
+		background: #c49d2e;
+		transform: translateY(-50%) scale(1.1);
+	}
+
+	.carousel-btn.prev {
+		left: -20px;
+	}
+
+	.carousel-btn.next {
+		right: -20px;
+	}
+
+	.clients-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 25px;
+	}
+
+	.client-card {
+		padding: 25px;
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+
+	.client-number {
+		font-size: 2rem;
+		font-weight: 800;
+		color: var(--gold);
+		opacity: 0.5;
+		min-width: 50px;
+	}
+
+	.client-card h4 {
+		color: var(--primary);
+		font-size: 1.05rem;
+		line-height: 1.5;
+		margin: 0;
+	}
+
+	.industries-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 30px;
+	}
+
+	.industry-card {
+		background: rgba(255,255,255,0.1);
+		padding: 40px 30px;
+		border-radius: 10px;
+		text-align: center;
+		transition: all 0.3s ease;
+	}
+
+	.industry-card:hover {
+		background: rgba(255,255,255,0.15);
+		transform: translateY(-5px);
+	}
+
+	.industry-icon {
+		font-size: 3.5rem;
+		margin-bottom: 20px;
+	}
+
+	.industry-card h3 {
+		color: var(--gold);
+		font-size: 1.4rem;
+		margin-bottom: 15px;
+	}
+
+	.industry-card p {
+		opacity: 0.9;
+		line-height: 1.6;
+	}
+
+	.testimonials-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		gap: 30px;
+		margin-top: 40px;
+	}
+
+	.testimonial-card {
+		padding: 40px 35px;
+		position: relative;
+	}
+
+	.quote-icon {
+		font-size: 5rem;
+		color: var(--gold);
+		opacity: 0.2;
+		line-height: 1;
+		margin-bottom: 10px;
+	}
+
+	.testimonial-card p {
+		color: var(--text-light);
+		font-size: 1.05rem;
+		line-height: 1.8;
+		margin-bottom: 25px;
+	}
+
+	.testimonial-author {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+
+	.testimonial-author strong {
+		color: var(--primary);
+		font-size: 1.1rem;
+	}
+
+	.testimonial-author span {
+		color: var(--gold);
+		font-size: 0.9rem;
+	}
+
+	@media (max-width: 1024px) {
+		.carousel-card {
+			flex: 0 0 calc(50% - 15px);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.page-hero {
+			padding: 100px 0 60px;
+		}
+
+		.page-hero h1 {
+			font-size: 2.2rem;
+		}
+
+		.page-hero p {
+			font-size: 1.1rem;
+		}
+
+		.carousel-card {
+			flex: 0 0 calc(100% - 0px);
+		}
+
+		.carousel-btn {
+			width: 40px;
+			height: 40px;
+			font-size: 1.5rem;
+		}
+
+		.carousel-btn.prev {
+			left: 0;
+		}
+
+		.carousel-btn.next {
+			right: 0;
+		}
+
+		.clients-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.industries-grid,
+		.testimonials-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
+
+<script>
+	const track = document.querySelector('.carousel-track');
+	const prevBtn = document.querySelector('.carousel-btn.prev');
+	const nextBtn = document.querySelector('.carousel-btn.next');
+	let currentIndex = 0;
+
+	function updateCarousel() {
+		if (track) {
+			const cardWidth = (track as HTMLElement).querySelector('.carousel-card')?.clientWidth || 0;
+			const gap = 30;
+			const offset = -(currentIndex * (cardWidth + gap));
+			(track as HTMLElement).style.transform = `translateX(${offset}px)`;
+		}
+	}
+
+	nextBtn?.addEventListener('click', () => {
+		const totalCards = document.querySelectorAll('.carousel-card').length;
+		const visibleCards = window.innerWidth > 1024 ? 3 : window.innerWidth > 768 ? 2 : 1;
+		if (currentIndex < totalCards - visibleCards) {
+			currentIndex++;
+			updateCarousel();
+		}
+	});
+
+	prevBtn?.addEventListener('click', () => {
+		if (currentIndex > 0) {
+			currentIndex--;
+			updateCarousel();
+		}
+	});
+
+	window.addEventListener('resize', () => {
+		currentIndex = 0;
+		updateCarousel();
+	});
+</script>
