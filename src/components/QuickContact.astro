@@ -199,14 +199,13 @@
 		};
 
 		try {
-			const response = await fetch('https://ualenffyhtrybqgmxuqq.supabase.co/functions/v1/send-contact-email', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-					'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVhbGVuZmZ5aHRyeWJxZ214dXFxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIyNjA3MjksImV4cCI6MjA4NzgzNjcyOX0.UWu5E5COzRlGaiWBbTb1AXXBYCo63W5ADMa3JluwepM`,
-				},
-				body: JSON.stringify(formData),
-			});
+			const response = await fetch('http://127.0.0.1:8000/contact/', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData),
+});
 
 			const result = await response.json();
 
