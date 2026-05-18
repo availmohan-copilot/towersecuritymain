@@ -18,7 +18,7 @@ def contact_view(request):
             subject=f"Contact: {subject}",
             message=f"Name: {name}\nEmail: {email}\nPhone: {phone}\nMessage: {message}",
             from_email='thetowersecurity@gmail.com',
-            recipient_list=['availmohan@gmail.com'],
+            recipient_list=['thetowersecurity@gmail.com'],
         )
 
         return JsonResponse({'status': 'success'})
