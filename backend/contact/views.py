@@ -1,7 +1,9 @@
 import json
+import urllib.request
+import urllib.parse
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from django.core.mail import send_mail
+from django.conf import settings
 
 @csrf_exempt
 def contact_view(request):
@@ -14,13 +16,33 @@ def contact_view(request):
         subject = data.get('subject', '')
         message = data.get('message', '')
 
-        send_mail(
-            subject=f"Contact: {subject}",
-            message=f"Name: {name}\nEmail: {email}\nPhone: {phone}\nMessage: {message}",
-            from_email='thetowersecurity@gmail.com',
-            recipient_list=['thetowersecurity@gmail.com'],
+        # SendGrid HTTP API
+        payload = json.dumps({
+            "personalizations": [{
+                "to": [{"email": "thetowersecurity@gmail.com"}]
+            }],
+            "from": {"email": "towersecuritycompany@gmail.com"},
+            "subject": f"Contact: {subject}",
+            "content": [{
+                "type": "text/plain",
+                "value": f"Name: {name}\nEmail: {email}\nPhone: {phone}\nMessage: {message}"
+            }]
+        }).encode('utf-8')
+
+        req = urllib.request.Request(
+            'https://api.sendgrid.com/v3/mail/send',
+            data=payload,
+            headers={
+                'Authorization': f'Bearer {settings.SENDGRID_API_KEY}',
+                'Content-Type': 'application/json'
+            },
+            method='POST'
         )
 
-        return JsonResponse({'status': 'success'})
+        try:
+            urllib.request.urlopen(req)
+            return JsonResponse({'status': 'success'})
+        except Exception as e:
+            return JsonResponse({'status': 'error', 'message': str(e)}, status=400)
 
     return JsonResponse({'status': 'error'}, status=400)
