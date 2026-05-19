@@ -29,11 +29,14 @@ def contact_view(request):
             }]
         }).encode('utf-8')
 
+        api_key = settings.SENDGRID_API_KEY
+        print(f"API KEY CHECK: {api_key[:10] if api_key else 'NONE'}")  # debug
+
         req = urllib.request.Request(
             'https://api.sendgrid.com/v3/mail/send',
             data=payload,
             headers={
-                'Authorization': f'Bearer {settings.SENDGRID_API_KEY}',
+                'Authorization': f'Bearer {api_key}',
                 'Content-Type': 'application/json'
             },
             method='POST'
@@ -42,7 +45,12 @@ def contact_view(request):
         try:
             urllib.request.urlopen(req)
             return JsonResponse({'status': 'success'})
+        except urllib.error.HTTPError as e:
+            error_body = e.read().decode('utf-8')
+            print(f"SENDGRID ERROR: {e.code} - {error_body}")
+            return JsonResponse({'status': 'error', 'message': error_body}, status=400)
         except Exception as e:
+            print(f"GENERAL ERROR: {str(e)}")
             return JsonResponse({'status': 'error', 'message': str(e)}, status=400)
 
     return JsonResponse({'status': 'error'}, status=400)
